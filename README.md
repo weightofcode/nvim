@@ -1,2 +1,5 @@
-# nvim
-Neovim configuration files
+# Neovim configuration files
+
+- basic settings
+- plugin manager
+- plugins
