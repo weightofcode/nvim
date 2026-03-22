@@ -21,7 +21,7 @@ def run_command(cmd):
     except subprocess.CalledProcessError as e:
         print(f"NVIM_RUN_ERROR: Command failed: {cmd}")
         sys.exit(e.returncode)
-# >>>>>>>> general
+# <<<<<<<< general
 
 # Nvim client >>>>>>>>
 def check_nvim_installed():
@@ -33,7 +33,7 @@ def check_nvim_installed():
         return result.returncode == 0
     except FileNotFoundError:
         return False
-# >>>>>>>> Nvim client
+# <<<<<<<< Nvim client
 
 # Nvim config >>>>>>>>
 def get_nvim_config_path():
@@ -92,7 +92,7 @@ def deploy_nvim_config(repo_root, target_path):
         else:
             shutil.copy2(src, dst)
     print("NVIM_CONFIG_INFO: Deployment of Neovim config complete.")
-# >>>>>>>> Nvim config
+# <<<<<<<< Nvim config
 
 
 
