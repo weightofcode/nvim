@@ -86,7 +86,7 @@ def backup_existing_config(target_path):
 def deploy_nvim_config(repo_root, target_path):
     print("NVIM_CONFIG_INFO: Deploying Neovim config...")
     target_path.mkdir(parents=True, exist_ok=True)
-    allowed_items = ["init.lua", "lua"]
+    allowed_items = ["init.lua", ".editorconfig", "lua"]
     for item in allowed_items:
         src = repo_root/item
         dst = target_path/item
