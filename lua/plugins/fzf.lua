@@ -27,6 +27,11 @@ return {
             function() require("fzf-lua").files({cwd=vim.fn.stdpath("config")}) end,
             desc="Find Files in config folder of the project directory"
         },
+        {
+            "<leader>fb",
+            function() require("fzf-lua").builtin() end,
+            desc="Open FZF Builtin list of fuzzy finders"
+        },
     }
     ---@diagnostic enable: missing-fields
 }
