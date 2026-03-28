@@ -23,9 +23,9 @@ return {
             desc="Find Files with Grep in project directory"
         },
         {
-            "<leader>fc",
-            function() require("fzf-lua").files({cwd=vim.fn.stdpath("config")}) end,
-            desc="Find Files in config folder of the project directory"
+            "<leader><leader>",
+            function() require("fzf-lua").buffers() end,
+            desc="List open buffers"
         },
         {
             "<leader>fb",
