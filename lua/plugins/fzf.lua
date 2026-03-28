@@ -13,25 +13,72 @@ return {
         -- is because nvim will know that these keys are associated with Lazy
         -- and will only load them on demand (performance increase)
         {
-            "<leader>ff",
-            function() require("fzf-lua").files() end,
-            desc="Find Files in project directory"
-        },
-        {
-            "<leader>fg",
-            function() require("fzf-lua").live_grep() end,
-            desc="Find Files with Grep in project directory"
-        },
-        {
-            "<leader><leader>",
-            function() require("fzf-lua").buffers() end,
-            desc="List open buffers"
+            "<leader>fh",
+            function() require("fzf-lua").helptags() end,
+            desc="[F]find [H]elp"
         },
         {
             "<leader>fb",
             function() require("fzf-lua").builtin() end,
-            desc="Open FZF Builtin list of fuzzy finders"
+            desc="[F]find [B]uiltin"
         },
+        {
+            "<leader>ff",
+            function() require("fzf-lua").files() end,
+            desc="[F]find [F]iles"
+        },
+        {
+            "<leader>fg",
+            function() require("fzf-lua").live_grep() end,
+            desc="[F]find [G]rep"
+        },
+        {
+            "<leader><leader>",
+            function() require("fzf-lua").buffers() end,
+            desc="[ ] Find existing buffers"
+        },
+        {
+            "<leader>/",
+            function() require("fzf-lua").lgrep_curbuf() end,
+            desc="[/] Live grep the current buffer"
+        },
+        {
+            "<leader>fc",
+            function() require("fzf-lua").files({
+                cwd = vim.fn.stdpath("config")
+            }) end,
+            desc="[F]find [C]onfig"
+        },
+        {
+            "<leader>fk",
+            function() require("fzf-lua").keymaps() end,
+            desc="[F]find [K]eymaps"
+        },
+        {
+            "<leader>fw",
+            function() require("fzf-lua").grep_cword() end,
+            desc="[F]find current [W]ord" -- case-sensitive
+        },
+        {
+            "<leader>fW",
+            function() require("fzf-lua").grep_cWORD() end,
+            desc="[F]find current [W]ORD" -- case-insensitive full word
+        },
+        {
+            "<leader>fd",
+            function() require("fzf-lua").diagnostics_document() end,
+            desc="[F]find [D]iagnostics"
+        },
+        {
+            "<leader>fr",
+            function() require("fzf-lua").resume() end,
+            desc="[F]find [R]esume"
+        },
+        {
+            "<leader>fo",
+            function() require("fzf-lua").oldfiles() end,
+            desc="[F]find [O]ld files"
+        }
     }
     ---@diagnostic enable: missing-fields
 }
